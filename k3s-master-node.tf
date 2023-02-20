@@ -1,7 +1,7 @@
 resource "null_resource" "k3s_master_node" {
   connection {
     type     = "ssh"
-    host     = vars.master_node
+    host     = var.master_node
     user     = var.vm_user
     password = var.vm_pass
   }
