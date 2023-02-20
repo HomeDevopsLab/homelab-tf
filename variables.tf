@@ -1,7 +1,7 @@
 variable "master_node" {
   description = "K3S Master Node"
   type        = string
-  default     = ["1.1.1.1"]
+  default     = "1.1.1.1"
 }
 
 variable "vm_user" {
