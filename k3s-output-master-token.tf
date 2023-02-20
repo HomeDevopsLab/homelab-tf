@@ -1,17 +1,11 @@
-provider "remote" {
-  alias        = "k3s-master-node"
-  max_sessions = 2
+data "remote_file" "master_token" {
   conn {
     host     = var.master_node
     user     = var.vm_user
     password = var.vm_pass
     sudo     = true
   }
-}
-
-data "remote_file" "master_token" {
-  provider = remote.k3s-master-node
-  path     = "/var/lib/rancher/k3s/server/node-token"
+  path = "/var/lib/rancher/k3s/server/node-token"
 }
 
 output "master_token" {
