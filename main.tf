@@ -4,9 +4,9 @@ terraform {
       source  = "hashicorp/null"
       version = "3.2.1"
     }
-    remote = {
-      source  = "tenstad/remote"
-      version = "0.1.1"
+    external = {
+      source = "hashicorp/external"
+      version = "2.2.3"
     }
   }
   backend "local" {

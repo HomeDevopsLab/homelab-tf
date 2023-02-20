@@ -1,15 +1,10 @@
-data "remote_file" "master_token" {
-  conn {
-    host     = var.master_node
-    user     = var.vm_user
-    password = var.vm_pass
-    sudo     = true
-  }
-  path = "/var/lib/rancher/k3s/server/node-token"
+data "external" "k3s_master_token" {
+  program = [
+    "/bin/bash", "-c", 
+    "sshpass -p ${var.vm_pass} ssh ${var.vm_user}@${var.master_node} \"echo ${var.vm_pass} | sudo -S cat /var/lib/rancher/k3s/server/node-token\""]
 }
 
-output "master_token" {
-  description = "Master token for adding worker nodes"
-  value       = data.remote_file.master_token
-  sensitive   = true
+output "k3s_master_token" {
+  description = "K3S token needed for worker nodes"
+  value = data.external.k3s_master_token.result
 }
