@@ -7,7 +7,7 @@ resource "null_resource" "k3s_master_node" {
   }
   provisioner "remote-exec" {
     inline = [
-      "curl -sfL https://get.k3s.io | echo ${var.vm_pass} | sh -"
+      "curl -sfL https://get.k3s.io | echo ${var.vm_pass} | sudo -S sh -"
     ]
   }
 }
