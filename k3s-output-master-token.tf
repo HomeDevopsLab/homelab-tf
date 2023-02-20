@@ -4,7 +4,7 @@ provider "remote" {
   conn {
     host     = var.master_node
     user     = var.vm_user
-    password = vm_pass
+    password = var.vm_pass
     sudo     = true
   }
 }
