@@ -4,6 +4,12 @@ variable "master_node" {
   default     = "1.1.1.1"
 }
 
+variable "worker_nodes" {
+  description = "List of K3s worker nodes"
+  type        = list(any)
+  default     = ["2.2.2.2"]
+}
+
 variable "vm_user" {
   description = "Generic VM login"
   type        = string
