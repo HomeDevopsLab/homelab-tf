@@ -1,4 +1,4 @@
-resource "null_resource" "k3s_master_node" {
+resource "null_resource" "k3s_worker_nodes" {
   depends_on = [
     data.external.k3s_master_token
   ]
