@@ -23,5 +23,5 @@ data "external" "k3s_master_token" {
 output "k3s_master_token" {
   description = "K3S token needed for worker nodes"
   value       = data.external.k3s_master_token.result.token
-  sensitive = true
+  sensitive   = true
 }
