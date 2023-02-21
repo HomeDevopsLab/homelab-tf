@@ -15,7 +15,7 @@ resource "null_resource" "k3s_worker_nodes" {
   provisioner "remote-exec" {
     inline = [
       "echo ${var.vm_pass} | sudo -S date",
-      "curl -sfL https://get.k3s.io | K3S_URL=https://${var.master_node}:6443 K3S_TOKEN=${data.external.k3s_master_token.result.token} sh -"
+      "curl -sfL https://get.k3s.io | K3S_URL=https://${var.master_node}:6443 K3S_TOKEN=${k3s_master_token} sh -"
     ]
   }
 }
