@@ -2,9 +2,9 @@ resource "null_resource" "k3s_worker_nodes" {
   depends_on = [
     data.external.k3s_master_token
   ]
-  
+
   for_each = toset(var.worker_nodes)
-  
+
   connection {
     type     = "ssh"
     host     = each.key
