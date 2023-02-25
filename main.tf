@@ -10,6 +10,6 @@ terraform {
     }
   }
   backend "local" {
-    path = "/home/ubuntu/k3s/terraform.tfstate"
+    path = "/home/ubuntu/terraform/terraform.tfstate"
   }
 }
