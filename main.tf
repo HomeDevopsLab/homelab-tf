@@ -25,7 +25,7 @@ terraform {
       version = ">= 1.10.0"
     }
     flux = {
-      source = "fluxcd/flux"
+      source  = "fluxcd/flux"
       version = "0.25.3"
     }
     tls = {
