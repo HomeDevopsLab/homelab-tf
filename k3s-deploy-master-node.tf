@@ -24,7 +24,7 @@ data "external" "k3s_kube_config" {
   depends_on = [
     null_resource.k3s_master_node
   ]
-  program = ["/bin/bash", "-c", "echo \"{\\\"kube_config\\\":\\\"$(sshpass -p ${var.vm_pass} ssh -o StrictHostKeyChecking=no ${var.vm_user}@${var.master_node} \"echo ${var.vm_pass} | sudo -S cat /etc/rancher/k3s/k3s.yaml | base64 \")\\\"}\""]
+  program = ["/bin/bash", "-c", "echo \"{\\\"kube_config\\\":\\\"$(sshpass -p ${var.vm_pass} ssh -o StrictHostKeyChecking=no ${var.vm_user}@${var.master_node} \"echo ${var.vm_pass} | sudo -S cat /etc/rancher/k3s/k3s.yaml | base64 -w0\")\\\"}\""]
 }
 
 output "k3s_master_token" {
