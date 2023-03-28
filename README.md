@@ -15,3 +15,4 @@ vm_pass = "adminSecret"
 If you need to change paths to configuration files, you should update following files:
 * **.github/workflows/terraform.yml**: to adjust prod.tfvars filename or path
 * **main.tf**: to adjust tfstate file name or path
+### Flux
