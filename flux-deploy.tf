@@ -2,6 +2,10 @@ provider "flux" {}
 
 provider "kubectl" {}
 
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
 provider "github" {
   owner = var.github_owner
   token = var.github_token
