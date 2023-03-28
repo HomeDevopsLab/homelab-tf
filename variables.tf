@@ -21,3 +21,9 @@ variable "vm_pass" {
   type        = string
   default     = "secret"
 }
+
+variable "home_dir" {
+  description = "Home dir path"
+  type = string
+  default = "/home/ubuntu"
+}
