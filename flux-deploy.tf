@@ -4,6 +4,9 @@ provider "kubectl" {}
 
 provider "kubernetes" {
   config_path = "~/.kube/config"
+  depends_on = [
+    local_file.k3s_config
+  ]
 }
 
 provider "github" {
