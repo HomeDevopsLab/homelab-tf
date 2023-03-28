@@ -14,6 +14,6 @@ terraform {
     }
   }
   backend "local" {
-    path = "${var.home_dir}/terraform/terraform.tfstate"
+    path = "/home/ubuntu/terraform/terraform.tfstate"
   }
 }
